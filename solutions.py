@@ -39,13 +39,30 @@ def question2(a):
     longest_string = 1 
     longest_palindrome = a[0] # start with the first letter as smallest palindrome (any letter would do)
     
-    palindrome_check_len = len(string)
-    #while(palindrome_check_len > 0):
-        #is
+    palindrome_check_len = len(a)
+    while(palindrome_check_len > 0):
+        # check for palindrome at current len
+        for i in range(len(a) - palindrome_check_len + 1):
+            to_check = a[i:palindrome_check_len+i]
+            if(is_palindrome(to_check)):
+                return to_check
+            
+        # decrement the size you are checking for
+        palindrome_check_len -= 1
+        
+        
+    # Didn't find any
+    return ""
     
-    
-    pass
-    
+def is_palindrome(s):
+    '''check if a string is a palindrome'''
+    for i in range(len(s)):
+        if(not(s[i] == s[len(s) - 1 - i])):
+            return False
+        if(i >= (len(s) - i)): 
+            # Exit if your counters meet in the middle
+            return True
+    return True
     
 def question3(G):
     '''Given an undirected graph G, find the minimum spanning tree
@@ -137,6 +154,15 @@ print("s: None", "t: None", question1(None, None))
 print("")
 
 print("Question 2:")
+print("cheese", question2("cheese"))
+print("ooooo", question2("ooooo"))
+print("None", question2(None))
+print("(Empty string)", question2(""))
+print("abcdeffed", question2("abcdeffed"))
+print("abcdefed", question2("abcdefed"))
+
+print("")
+
 print("Question 3:")
 print("Question 4:")
 print("Question 5:")
