@@ -98,8 +98,26 @@ def question4(T, r, n1, n2):
                 3,
                 1,
                 4)
-    and the answer would be 3.'''
+    and the answer would be 3.
+      3      2
+     | |
+    0   4
+     |
+      1'''
+    # Idea:
+    # Start at the root and mark ancestors of n1 (it's a binary search tree so traverse it as so)
+    # Do DFS to find N1
+    #current_node = r
+    #while(not (current_node == n1)) :
+        #for i, e in enumerate T[r]:
+        
+        
+            
+    # Start at the root and go towards n2 until find marked 
+
     pass
+    
+def DFS(T, current, to_find):
     
     
 def question5(ll, m):
